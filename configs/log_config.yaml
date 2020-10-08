@@ -1,0 +1,20 @@
+version: 1
+
+formatters:
+  regular:
+    format: "%(asctime)s %(name)s %(levelname)s %(message)s"
+    datefmt: "%Y-%m-%dT%H:%M:%SZ"
+
+handlers:
+  console_handler:
+    class: logging.StreamHandler
+    formatter: regular
+
+  file_handler:
+    class: logging.FileHandler
+    filename: logs/test.log
+    formatter: regular
+
+loggers:
+  defaultLogger:
+    handlers: [console_handler, file_handler]
